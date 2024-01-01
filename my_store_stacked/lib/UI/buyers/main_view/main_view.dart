@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:my_store_stacked/UI/buyers/main_view/main_viewmodel.dart';
+import 'package:my_store_stacked/UI/buyers/main_view/widget/bottom_navigation_bar.dart';
 import 'package:stacked/stacked.dart';
 
 class MainView extends StatelessWidget {
@@ -10,11 +11,8 @@ class MainView extends StatelessWidget {
     return ViewModelBuilder.nonReactive(
         viewModelBuilder: () => MainViewModel(),
         builder: (context, viewModel, child) {
-          return const Scaffold(
-            body: Center(
-              child: Text("Main Screen"),
-            ),
-          );
+          return Scaffold(
+              bottomNavigationBar: BottomNavBar(), body: MainNavBody());
         });
   }
 }
